@@ -1,0 +1,133 @@
+.wrap {
+  padding: 140px 0 200px;
+  background-color: var(--color-bg);
+  position: relative;
+  min-height: 600px;
+}
+
+.sideWave {
+  background-color: var(--color-orange) !important;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  margin-bottom: 56px;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+.qa {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.2em;
+  align-self: flex-start;
+  margin-left: 1rem;
+}
+
+.sprout {
+  margin: 6px 0 0;
+}
+
+.title {
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-text);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  background-color: var(--color-orange);
+  border-radius: 10px;
+  color: var(--color-white);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.qBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.qMark {
+  font-size: 26px;
+  font-weight: 700;
+  width: 28px;
+  text-align: center;
+}
+
+.qText {
+  flex: 1;
+  font-weight: 700;
+}
+
+.caret {
+  font-size: 14px;
+  opacity: 0.9;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.caretOpen {
+  transform: rotate(180deg);
+}
+
+.aWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.aWrapOpen {
+  grid-template-rows: 1fr;
+}
+
+.aInner {
+  overflow: hidden;
+}
+
+.aBody {
+  padding: 12px 24px 18px 68px;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  margin: 0 24px;
+}
+
+.aBody p {
+  font-size: 16px;
+  color: var(--color-white);
+  line-height: 1.8;
+  white-space: pre-line;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .wrap { padding: 90px 0 130px; }
+  .title { font-size: 28px; }
+  .qBtn { font-size: 16px; padding: 14px 18px; }
+  .aBody { padding: 10px 16px 14px 18px; margin: 0 16px; }
+  .sideWave { display: none !important; }
+}

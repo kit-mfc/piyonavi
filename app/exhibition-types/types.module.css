@@ -1,0 +1,158 @@
+.wrap {
+  padding: 120px 0 100px;
+  background-color: var(--color-bg);
+  background-image: url("/imgs/background.svg");
+  background-repeat: repeat;
+  background-size: 220px auto;
+  position: relative;
+}
+
+.sideWave {
+  background-color: var(--color-green) !important;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.diagnosisBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.diagnosisBtn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.diagnosisIcon {
+  filter: brightness(0) invert(1);
+}
+
+.diagnosisArrow {
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+.sprout { margin-bottom: 4px; }
+
+.title {
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.lead {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cardIcon {
+  margin-top: 2px;
+  height: 20px;
+  width: auto;
+  min-width: 20px;
+  object-fit: contain;
+}
+
+.cardHead h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #3B7536;
+}
+
+.tag {
+  background-color: var(--color-white);
+  border: 1.2px solid #64463C;
+  border-radius: 8px;
+  padding: 2px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64463C;
+}
+
+.cardText {
+  font-size: 12px;
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.subBlock {
+  padding-top: 8px;
+}
+
+.subLabel {
+  display: inline-block;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.subList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .wrap { padding: 80px 0 70px; }
+  .title { font-size: 28px; }
+  .tag { display: none; }
+  .sideWave { display: none !important; }
+}

@@ -1,0 +1,83 @@
+.wrap {
+  padding: 140px 0 200px;
+  background-color: var(--color-bg);
+  position: relative;
+  min-height: 600px;
+}
+
+.sideWave {
+  background-color: var(--color-orange) !important;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.cloudTitleWrap {
+  margin-bottom: 56px;
+}
+
+.cloudTitle {
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+}
+
+.cloudTitle span {
+  --circle: 120px;
+  --step: 90px;
+  display: inline-block;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-text);
+  padding: 30px 60px;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.cloudTitle span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--circle);
+  height: var(--circle);
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow:
+    calc(-1 * var(--step)) 0 0 var(--color-white),
+    var(--step) 0 0 var(--color-white),
+    calc(-2 * var(--step)) 0 0 var(--color-white),
+    calc(2 * var(--step)) 0 0 var(--color-white),
+    calc(-3 * var(--step)) 0 0 var(--color-white),
+    calc(3 * var(--step)) 0 0 var(--color-white);
+}
+
+.body {
+  font-size: 16px;
+  color: var(--color-text);
+  line-height: 2;
+}
+
+.body p {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .wrap { padding: 90px 0 130px; }
+  .sideWave { display: none; }
+  .cloudTitle span {
+    --circle: 78px;
+    --step: 58px;
+    font-size: 24px;
+    padding: 20px 40px;
+  }
+}

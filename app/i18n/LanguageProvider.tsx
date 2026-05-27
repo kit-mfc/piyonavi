@@ -1,0 +1,72 @@
+"use client";
+
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { LANGUAGES, translations, type Language, type Translation } from "./translations";
+
+const STORAGE_KEY = "piyonavi.lang";
+
+type LanguageContextValue = {
+  lang: Language;
+  setLang: (lang: Language) => void;
+  toggleLang: () => void;
+  t: Translation;
+};
+
+const LanguageContext = createContext<LanguageContextValue | null>(null);
+
+function isLanguage(value: unknown): value is Language {
+  return typeof value === "string" && (LANGUAGES as string[]).includes(value);
+}
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [lang, setLangState] = useState<Language>("ja");
+
+  useEffect(() => {
+    const stored = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
+    if (isLanguage(stored)) {
+      setLangState(stored);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lang;
+    }
+  }, [lang]);
+
+  const setLang = useCallback((next: Language) => {
+    setLangState(next);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(STORAGE_KEY, next);
+    }
+  }, []);
+
+  const toggleLang = useCallback(() => {
+    setLangState((prev) => {
+      const next: Language = prev === "ja" ? "en" : "ja";
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(STORAGE_KEY, next);
+      }
+      return next;
+    });
+  }, []);
+
+  const value = useMemo<LanguageContextValue>(
+    () => ({ lang, setLang, toggleLang, t: translations[lang] }),
+    [lang, setLang, toggleLang],
+  );
+
+  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+}
+
+export function useLanguage() {
+  const ctx = useContext(LanguageContext);
+  if (!ctx) {
+    throw new Error("useLanguage must be used within a LanguageProvider");
+  }
+  return ctx;
+}
+
+export function useTranslation() {
+  return useLanguage().t;
+}
