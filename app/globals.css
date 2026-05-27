@@ -148,6 +148,24 @@ ul, ol {
   border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: opacity .15s ease;
+}
+
+.lang-switch:hover {
+  opacity: 0.85;
+}
+
+.lang-switch > span {
+  opacity: 0.55;
+  transition: opacity .15s ease;
+}
+
+.lang-switch__active {
+  opacity: 1 !important;
 }
 
 .menu-btn {

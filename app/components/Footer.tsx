@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "../i18n/LanguageProvider";
 
 export default function Footer() {
+  const t = useTranslation();
+  const description = t.common.footer.description.split("\n");
+
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
@@ -16,16 +22,20 @@ export default function Footer() {
             />
           </h2>
           <p>
-            松ヶ崎祭のポータルサイトです。<br />
-            出展に必要な情報の確認・各種出展物管理を行えます。
+            {description.map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < description.length - 1 && <br />}
+              </span>
+            ))}
           </p>
           <div className="footer-univ">
-            国立大学法人京都工芸繊維大学<br />
-            松ヶ崎祭実行委員会
+            {t.common.footer.university}<br />
+            {t.common.footer.committee}
           </div>
           <Image
             src="/imgs/matsu-festival-logo.svg"
-            alt="松ヶ崎祭"
+            alt={t.common.header.brandLine1}
             width={160}
             height={60}
             className="site-footer__matsu-logo"
@@ -33,20 +43,20 @@ export default function Footer() {
         </div>
 
         <div className="site-footer__col">
-          <h3>リンク</h3>
+          <h3>{t.common.footer.linksHeading}</h3>
           <ul>
-            <li><Link href="/guide">出展ガイド</Link></li>
-            <li><Link href="/rules">出展規約</Link></li>
-            <li><Link href="/faq">よくある質問</Link></li>
-            <li><Link href="/contact">お問い合わせ</Link></li>
+            <li><Link href="/guide">{t.common.footer.links.guide}</Link></li>
+            <li><Link href="/rules">{t.common.footer.links.rules}</Link></li>
+            <li><Link href="/faq">{t.common.footer.links.faq}</Link></li>
+            <li><Link href="/contact">{t.common.footer.links.contact}</Link></li>
           </ul>
         </div>
 
         <div className="site-footer__col">
-          <h3>委員会関連</h3>
+          <h3>{t.common.footer.committeeHeading}</h3>
           <ul>
-            <li><Link href="/links">関連リンク</Link></li>
-            <li><Link href="/login">団体ログイン</Link></li>
+            <li><Link href="/links">{t.common.footer.links.relatedLinks}</Link></li>
+            <li><Link href="/login">{t.common.footer.links.login}</Link></li>
           </ul>
         </div>
       </div>
@@ -62,7 +72,7 @@ export default function Footer() {
             <Image src="/imgs/mail.svg" alt="" width={24} height={24} />
           </a>
         </div>
-        <small>© 松ヶ崎祭実行委員会</small>
+        <small>{t.common.footer.copyright}</small>
       </div>
     </footer>
   );

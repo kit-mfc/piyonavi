@@ -2,16 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-
-const menuItems = [
-  { label: "ホーム", href: "/" },
-  { label: "お知らせ", href: "/news" },
-  { label: "出展ガイド", href: "/guide" },
-  { label: "出展形態", href: "/exhibition-types" },
-  { label: "出展規約", href: "/rules" },
-  { label: "よくある質問", href: "/faq" },
-  { label: "お問い合わせ", href: "/contact" },
-];
+import { useTranslation } from "../i18n/LanguageProvider";
 
 export default function MenuOverlay({
   isOpen,
@@ -20,6 +11,17 @@ export default function MenuOverlay({
   isOpen: boolean;
   onClose: () => void;
 }) {
+  const t = useTranslation();
+  const menuItems = [
+    { label: t.common.menu.items.home, href: "/" },
+    { label: t.common.menu.items.news, href: "/news" },
+    { label: t.common.menu.items.guide, href: "/guide" },
+    { label: t.common.menu.items.exhibitionTypes, href: "/exhibition-types" },
+    { label: t.common.menu.items.rules, href: "/rules" },
+    { label: t.common.menu.items.faq, href: "/faq" },
+    { label: t.common.menu.items.contact, href: "/contact" },
+  ];
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -42,7 +44,7 @@ export default function MenuOverlay({
       className={`menu-overlay${isOpen ? " menu-overlay--open" : ""}`}
       role="dialog"
       aria-modal="true"
-      aria-label="メニュー"
+      aria-label={t.common.menu.label}
       aria-hidden={!isOpen}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -56,7 +58,7 @@ export default function MenuOverlay({
       <button
         className="menu-overlay__close"
         type="button"
-        aria-label="メニューを閉じる"
+        aria-label={t.common.menu.close}
         onClick={onClose}
         tabIndex={isOpen ? 0 : -1}
       >

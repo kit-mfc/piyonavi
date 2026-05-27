@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
 import PageTransition from "./components/PageTransition";
+import { LanguageProvider } from "./i18n/LanguageProvider";
 
 const zenKaku = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="ja" className={zenKaku.variable}>
       <body>
-        <PageTransition>{children}</PageTransition>
+        <LanguageProvider>
+          <PageTransition>{children}</PageTransition>
+        </LanguageProvider>
       </body>
     </html>
   );
