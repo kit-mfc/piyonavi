@@ -1,8 +1,12 @@
+"use client";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "./about.module.css";
+import { useTranslation } from "../i18n/LanguageProvider";
 
 export default function AboutPage() {
+  const t = useTranslation();
   return (
     <div className="page-wrap">
       <Header />
@@ -11,21 +15,13 @@ export default function AboutPage() {
         <div className={styles.inner}>
           <div className={styles.cloudTitleWrap}>
             <div className={styles.cloudTitle}>
-              <span>ぴよナビとは</span>
+              <span>{t.pages.about.title}</span>
             </div>
           </div>
           <div className={styles.body}>
-            <p>松ヶ崎祭における、出展者向けのポータルサイトです。</p>
-            <p>
-              ぴよナビでは、出展申込から松ヶ崎祭当日までに必要な情報を、
-              ひとつの場所でまとめて確認・管理することができます。
-              各種提出物の管理、お支払い情報の確認、最新のお知らせの受け取りなど、
-              出展団体の皆さまの負担を少しでも軽くできるよう設計しています。
-            </p>
-            <p>
-              ご不明点やご相談は、お問い合わせフォームよりお気軽にお寄せください。
-              松ヶ崎祭実行委員会一同、皆さまのご出展を心よりお待ちしております。
-            </p>
+            {t.pages.about.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
         </div>
       </main>

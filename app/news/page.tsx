@@ -1,12 +1,12 @@
+"use client";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "../about/about.module.css";
-
-const news = [
-  { date: "2026-05-30", title: "出展団体ポータル『ぴよナビ』が公開されました！" },
-];
+import { useTranslation } from "../i18n/LanguageProvider";
 
 export default function NewsPage() {
+  const t = useTranslation();
   return (
     <div className="page-wrap">
       <Header />
@@ -15,11 +15,11 @@ export default function NewsPage() {
         <div className={styles.inner}>
           <div className={styles.cloudTitleWrap}>
             <div className={styles.cloudTitle}>
-              <span>お知らせ</span>
+              <span>{t.pages.news.title}</span>
             </div>
           </div>
           <ul style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {news.map((n, i) => (
+            {t.pages.news.items.map((n, i) => (
               <li
                 key={i}
                 style={{

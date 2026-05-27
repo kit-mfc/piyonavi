@@ -1,24 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../mypage.module.css";
-
-const notices = [
-  { date: "2026-05-30", title: "出展団体ポータル『ぴよナビ』が公開されました！" },
-  { date: "2026-05-15", title: "出展申込フォームの受付を開始しました。" },
-  { date: "2026-04-01", title: "松ヶ崎祭2026 開催決定のお知らせ" },
-];
+import { useTranslation } from "../../i18n/LanguageProvider";
 
 export default function NoticePage() {
+  const t = useTranslation();
   return (
     <>
-      <h1 className={styles.pageTitle}>おしらせ</h1>
+      <h1 className={styles.pageTitle}>{t.pages.mypageNotice.title}</h1>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        {notices.map((n, i) => (
+        {t.pages.mypageNotice.items.map((n, i) => (
           <div key={i} className={styles.singleTaskCard}>
             <div className={styles.singleTaskText}>
               <h3>{n.title}</h3>
               <p>{n.date}</p>
             </div>
-            <span className={styles.taskBadge}>詳細を見る</span>
+            <span className={styles.taskBadge}>{t.pages.mypageNotice.badge}</span>
           </div>
         ))}
       </div>

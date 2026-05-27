@@ -1,16 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../mypage.module.css";
+import { useTranslation } from "../../i18n/LanguageProvider";
 
 export default function MyPageContactPage() {
+  const t = useTranslation();
   return (
     <>
-      <h1 className={styles.pageTitle}>お問い合わせ</h1>
+      <h1 className={styles.pageTitle}>{t.pages.mypageContact.title}</h1>
       <div className={styles.singleTaskCard}>
         <div className={styles.singleTaskText}>
-          <h3>ご質問・ご相談はこちらから</h3>
-          <p>担当より2〜3営業日でご連絡いたします。</p>
+          <h3>{t.pages.mypageContact.cardTitle}</h3>
+          <p>{t.pages.mypageContact.cardBody}</p>
         </div>
-        <span className={styles.taskBadge}>問い合わせる</span>
+        <span className={styles.taskBadge}>{t.pages.mypageContact.badge}</span>
       </div>
       <div className={styles.mascot}>
         <Image src="/imgs/matsu-sleeping.png" alt="" width={150} height={150} />

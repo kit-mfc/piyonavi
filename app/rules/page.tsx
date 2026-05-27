@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "./rules.module.css";
+import { useTranslation } from "../i18n/LanguageProvider";
 
 export default function RulesPage() {
+  const t = useTranslation();
+  const lead = t.pages.rules.lead.split("\n");
   return (
     <div className="page-wrap">
       <Header />
@@ -14,11 +18,15 @@ export default function RulesPage() {
           <header className={styles.header}>
             <div className={styles.titleGroup}>
               <Image src="/imgs/sprout.svg" alt="" width={40} height={28} className={styles.sprout} />
-              <h1 className={styles.title}>出展規約</h1>
+              <h1 className={styles.title}>{t.pages.rules.title}</h1>
             </div>
             <p className={styles.lead}>
-              出展にあたり以下の規約を必ずご確認ください。<br />
-              出展申し込みをもって、本規約に同意したものとみなします。
+              {lead.map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < lead.length - 1 && <br />}
+                </span>
+              ))}
             </p>
           </header>
           <div className={styles.buttonWrap}>
@@ -28,7 +36,7 @@ export default function RulesPage() {
               rel="noopener noreferrer"
               className={`btn btn--green btn--with-arrow ${styles.btn}`}
             >
-              出展規約を確認する
+              {t.pages.rules.button}
             </a>
           </div>
         </div>
