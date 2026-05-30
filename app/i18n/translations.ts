@@ -836,37 +836,45 @@ export const translations: Record<Language, Translation> = {
         steps: [
           {
             title: "Attend the exhibitor briefing",
-            text: "We ask all prospective exhibitors to attend the briefing session.\nDates will be announced later in the \"News\" section.",
+            text: "All prospective exhibitors must attend the briefing session. Only the group's representative needs to attend.\nThe exhibitor briefings are on Wed 7/1 and Fri 7/3.",
           },
           {
             title: "Confirm your exhibition type",
-            text: "Confirm your exhibition type from food, goods, exhibition, performance, and more.\nSee the introduction to each type below.",
+            text: "The Matsugasaki Festival offers exhibition types such as food, goods, exhibitions, and performances.",
             cta: { label: "Exhibition types ›", href: "/exhibition-types" },
           },
           {
             title: "Review the exhibitor rules",
-            text: "Be sure to review the rules for exhibiting.\nPlease apply only after agreeing to the rules.",
+            text: "Be sure to review the exhibitor rules.\nPlease apply only after agreeing to the rules.",
             cta: { label: "Review the rules ›", href: "/rules" },
           },
           {
             title: "Submit the exhibitor application",
-            text: "Fill in and submit the exhibitor application form introduced at the briefing.\nAfter applying, you will be issued a group number and password.",
+            text: "Fill in the required fields on the exhibitor application form and submit it.\nAfter applying, you will be issued a group number and password.\n* Use your group number and password to log in to My Page.",
+          },
+          {
+            title: "Pay the participation deposit",
+            text: "A participation deposit (10,000 yen) is required when you apply. * Excludes individual exhibitors.\nThe deposit will be refunded at a later date, after we confirm that your exhibition booth and other items have been restored to their original condition following the Matsugasaki Festival.",
           },
           {
             title: "Submit required materials",
-            text: "Log in to My Page and submit the required materials by the deadlines.\nThis includes the participation agreement and the pamphlet icon, among others.",
+            text: "Log in to My Page and submit the required documents by the deadlines.",
           },
           {
             title: "Pay the exhibitor fee",
-            text: "Please pay the exhibitor fee by the specified deadline.\nThe amount can be confirmed from My Page.",
+            text: "Please pay the exhibitor fee by the specified deadline.\nThe amount due can be confirmed from My Page.",
           },
           {
             title: "Pick up rental items",
-            text: "Rental items you requested should be picked up at the specified date, time, and location.",
+            text: "If you requested rentals, please pick up the items at the specified date, time, and location.",
           },
           {
             title: "Matsugasaki Festival day",
             text: "Come fully prepared for the day of the Matsugasaki Festival.\nFor any questions, please contact the Matsugasaki Festival Executive Committee.",
+          },
+          {
+            title: "Refund of the participation deposit",
+            text: "The deposit will be refunded at a later date, after we confirm that your exhibition booth and other items have been restored to their original condition.",
           },
         ],
       },
