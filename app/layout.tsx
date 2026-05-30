@@ -14,6 +14,12 @@ const zenKaku = Zen_Kaku_Gothic_New({
 export const metadata: Metadata = {
   title: "ぴよナビ | 松ヶ崎祭 出展団体用ポータル",
   description: "松ヶ崎祭における出展者向けのポータルサイトです。",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/imgs/icon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({

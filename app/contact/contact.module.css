@@ -39,7 +39,7 @@
 }
 
 .lead {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.8;
 }
@@ -62,7 +62,7 @@
 }
 
 .label {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--color-text);
 }
@@ -73,7 +73,7 @@
   padding: 12px 16px;
   border-radius: 4px;
   color: var(--color-text);
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
 }
 

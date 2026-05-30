@@ -23,7 +23,7 @@
 }
 
 .groupId {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--color-text-muted);
   margin-bottom: 36px;
 }
@@ -47,7 +47,7 @@
 }
 
 .cardLabel {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--color-text);
   font-weight: 500;
 }
@@ -78,7 +78,7 @@
 }
 
 .cardHead h3 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--color-text);
 }
@@ -89,7 +89,7 @@
 }
 
 .note {
-  font-size: 10px;
+  font-size: 16px;
   color: var(--color-text-muted);
   margin-bottom: 8px;
 }
@@ -101,12 +101,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 8px;
 }
 
 .taskName { color: var(--color-text); font-weight: 500; }
-.taskMeta { color: var(--color-text-muted); font-size: 11px; }
+.taskMeta { color: var(--color-text-muted); font-size: 16px; }
 .taskMeta strong { color: var(--color-orange-deep); }
 
 .skeletonLine {
@@ -149,7 +149,7 @@
 }
 
 .singleTaskText p {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--color-text-muted);
 }
 
@@ -157,7 +157,7 @@
   background-color: var(--color-bg-cream);
   border-radius: 999px;
   padding: 6px 14px;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--color-text);
   white-space: nowrap;
 }

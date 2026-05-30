@@ -36,15 +36,22 @@ export default function DiagnosisPage() {
             </Link>
           </header>
 
-          <div className={styles.chartScroll}>
+          <Link href="/exhibition-types" className={styles.chartScroll}>
             <Image
               src="/imgs/diagnosis.svg"
               alt={t.pages.diagnosis.chartAlt}
               width={1346}
               height={1700}
-              className={styles.chartImage}
+              className={`${styles.chartImage} ${styles.chartImagePc}`}
             />
-          </div>
+            <Image
+              src="/imgs/diagnosis_sm.svg"
+              alt={t.pages.diagnosis.chartAlt}
+              width={363}
+              height={1232}
+              className={`${styles.chartImage} ${styles.chartImageSm}`}
+            />
+          </Link>
         </div>
       </main>
       <Footer />

@@ -29,7 +29,7 @@ export default function NewsPage() {
                   display: "flex",
                   gap: 24,
                   alignItems: "center",
-                  fontSize: 13,
+                  fontSize: 16,
                 }}
               >
                 <span style={{ color: "var(--color-text-muted)", flexShrink: 0 }}>{n.date}</span>

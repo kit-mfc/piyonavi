@@ -11,7 +11,7 @@
   right: 0;
   background-color: var(--color-green);
   color: var(--color-white);
-  width: 92px;
+  width: 110px;
   padding: 10px 8px 12px;
   border-radius: 12px 0 0 12px;
   display: flex;
@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0.04em;
@@ -75,7 +75,7 @@
 }
 
 .heroLead {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   letter-spacing: 0.1rem;
   color: var(--color-text);
@@ -96,7 +96,7 @@
 .scrollIndicatorText {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.35em;
   font-weight: 600;
   margin-bottom: 10px;
@@ -247,13 +247,13 @@
 }
 
 .topicCard p {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.7;
 }
 
 .topicCardTitleSuffix {
-  font-size: 0.65em;
+  font-size: 16px;
   margin-left: 4px;
   font-weight: 500;
 }
@@ -296,7 +296,7 @@
   display: flex;
   gap: 24px;
   align-items: center;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .newsDate {

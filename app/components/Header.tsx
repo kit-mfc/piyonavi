@@ -2,13 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuOverlay from "./MenuOverlay";
 import { useLanguage } from "../i18n/LanguageProvider";
 
 export default function Header({ wave = true }: { wave?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { lang, toggleLang, t } = useLanguage();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
@@ -51,6 +59,36 @@ export default function Header({ wave = true }: { wave?: boolean }) {
           </button>
         </div>
       </header>
+      <div
+        className={`site-header__floating${scrolled ? " is-visible" : ""}`}
+        aria-hidden={!scrolled}
+      >
+        <Link
+          href="/"
+          className="site-header__floating-brand"
+          tabIndex={scrolled ? undefined : -1}
+        >
+          <Image
+            src="/imgs/icon.svg"
+            alt={t.common.header.logoAlt}
+            width={50}
+            height={50}
+            className="site-header__brand-logo"
+          />
+        </Link>
+        <button
+          className="menu-btn site-header__floating-menu"
+          type="button"
+          aria-label={t.common.header.menuOpen}
+          aria-expanded={menuOpen}
+          tabIndex={scrolled ? undefined : -1}
+          onClick={() => setMenuOpen(true)}
+        >
+          <svg viewBox="0 0 28 28" fill="none">
+            <path d="M4 8h20M4 14h20M4 20h20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+          </svg>
+        </button>
+      </div>
       <MenuOverlay isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );

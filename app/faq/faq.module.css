@@ -6,6 +6,7 @@
 }
 
 .sideWave {
+    display: none;
   background-color: var(--color-orange) !important;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .qa {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-muted);
   letter-spacing: 0.2em;
   align-self: flex-start;
@@ -86,7 +87,7 @@
 }
 
 .caret {
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.9;
   display: inline-block;
   transition: transform 0.3s ease;

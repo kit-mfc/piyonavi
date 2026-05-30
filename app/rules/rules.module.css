@@ -6,6 +6,7 @@
 }
 
 .sideWave {
+    display: none;
   background-color: var(--color-green) !important;
 }
 
@@ -39,7 +40,7 @@
 }
 
 .lead {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-text);
   line-height: 2;
 }

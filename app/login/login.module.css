@@ -15,8 +15,7 @@
   inset: 0;
   background-image: url("/imgs/background.svg");
   background-repeat: repeat;
-  background-size: 380px auto;
-  background-position: 0 -50px;
+  background-size: 280px auto;
   pointer-events: none;
 }
 
@@ -136,7 +135,7 @@
 .error {
   color: #ff4d4d;
   background-color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   text-align: center;
   padding: 10px 14px;
@@ -166,14 +165,14 @@
 
 .forgot {
   color: var(--color-white);
-  font-size: 12px;
+  font-size: 16px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
 .forgot span {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .submitWrap {

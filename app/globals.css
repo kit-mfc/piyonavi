@@ -124,7 +124,7 @@ ul, ol {
 
 .site-header__brand-text {
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   font-weight: 500;
 }
@@ -147,7 +147,7 @@ ul, ol {
   padding: 8px 16px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -198,6 +198,50 @@ ul, ol {
   height: 28px;
 }
 
+/* Floating logo + hamburger that follow the page on scroll */
+.site-header__floating {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 90;
+}
+
+.site-header__floating.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-header__floating.is-visible .site-header__floating-brand,
+.site-header__floating.is-visible .site-header__floating-menu {
+  pointer-events: auto;
+}
+
+.site-header__floating-menu {
+  background-color: var(--color-orange);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.site-header__floating-brand {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+}
+
+.site-header__floating-menu:hover {
+  background-color: var(--color-orange);
+  filter: brightness(1.08);
+}
+
 /* ===== Footer ===== */
 .site-footer {
   position: relative;
@@ -246,26 +290,26 @@ ul, ol {
 }
 
 .site-footer__brand p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
   margin-bottom: 24px;
 }
 
 .site-footer__brand .footer-univ {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.6;
   opacity: 0.85;
 }
 
 .site-footer__col h3 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
 .site-footer__col ul li {
   margin-bottom: 8px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .site-footer__col ul li a:hover {
@@ -279,7 +323,7 @@ ul, ol {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
-  font-size: 11px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -328,12 +372,15 @@ ul, ol {
   .site-header {
     padding: 16px 16px;
   }
+  .site-header__floating {
+    padding: 0 16px;
+  }
   .site-header__actions {
     gap: 8px;
   }
   .lang-switch {
     padding: 4px 8px;
-    font-size: 11px;
+    font-size: 14px;
     border-radius: 6px;
   }
   .site-footer {
@@ -354,7 +401,7 @@ ul, ol {
     height: 28px;
   }
   .site-footer__brand p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .site-footer__matsu-logo {
     height: 24px;
@@ -635,7 +682,7 @@ ul, ol {
 }
 
 .section-header__sub {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--color-text-muted);
   margin-top: 12px;
   letter-spacing: 0.05em;

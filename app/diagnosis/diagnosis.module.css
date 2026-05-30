@@ -34,23 +34,33 @@
 }
 
 .lead {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.8;
 }
 
 /* Allow horizontal scrolling on narrow screens */
 .chartScroll {
+  display: block;
   width: 100%;
   overflow-x: auto;
   overflow-y: visible;
   padding-bottom: 12px;
+  cursor: pointer;
 }
 
 .chartImage {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.chartImagePc { display: block; }
+.chartImageSm { display: none; }
+
+@media (max-width: 768px) {
+  .chartImagePc { display: none; }
+  .chartImageSm { display: block; margin: 0 auto; }
 }
 
 .chart {
@@ -75,7 +85,7 @@
   border: 1.5px solid #D8C7B5;
   padding: 10px 22px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--color-text);
   text-align: center;
@@ -107,7 +117,7 @@
 .branchLabel {
   position: absolute;
   top: 16px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--color-green);
   letter-spacing: 0.04em;
@@ -175,7 +185,7 @@
 }
 
 .cloudLabel {
-  font-size: 11px;
+  font-size: 16px;
   opacity: 0.95;
   letter-spacing: 0.04em;
 }
@@ -196,7 +206,7 @@
 }
 
 .cloudSubList {
-  font-size: 10.5px;
+  font-size: 16px;
   line-height: 1.7;
   margin: 0 0 10px;
   list-style: none;
@@ -212,7 +222,7 @@
   color: var(--color-white);
   padding: 5px 14px;
   border-radius: 5px;
-  font-size: 10.5px;
+  font-size: 16px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -237,7 +247,7 @@
   background-color: var(--color-green);
   color: var(--color-white);
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-decoration: none;
@@ -255,7 +265,7 @@
 }
 
 .detailArrow {
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 2px;
 }
 
@@ -266,7 +276,7 @@
 @media (max-width: 768px) {
   .wrap { padding: 80px 0 70px; }
   .title { font-size: 28px; }
-  .lead { font-size: 13px; }
+  .lead { font-size: 14px; }
   .chartScroll { width: calc(100vw - 32px); }
   .chart { min-width: 760px; transform: scale(0.85); transform-origin: top center; }
 }

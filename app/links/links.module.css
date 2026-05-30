@@ -29,7 +29,7 @@
 }
 
 .label {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-muted);
   letter-spacing: 0.2em;
   align-self: flex-start;
@@ -105,7 +105,7 @@
 
 .linkDesc {
   grid-column: 1;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
@@ -123,7 +123,7 @@
   .title { font-size: 28px; }
   .groupTitle { font-size: 17px; }
   .linkName { font-size: 15px; }
-  .linkDesc { font-size: 13px; }
+  .linkDesc { font-size: 14px; }
   .link { padding: 14px 18px; }
   .sideWave { display: none !important; }
 }
