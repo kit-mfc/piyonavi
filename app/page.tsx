@@ -90,8 +90,10 @@ export default function HomePage() {
                   </h3>
                   <p>{topic.text}</p>
                   <span className={styles.topicCardArrow} aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M9 7l8 5-8 5V7z" fill="#828282"/>
+                    <svg viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="32.5" cy="32.5" r="32" fill="white" stroke="#828282"/>
+                      <path d="M28.0598 44L40 33.1312" stroke="#828282" strokeWidth="4" strokeLinecap="round"/>
+                      <path d="M28 22L39.9402 32.8688" stroke="#828282" strokeWidth="4" strokeLinecap="round"/>
                     </svg>
                   </span>
                 </Link>
