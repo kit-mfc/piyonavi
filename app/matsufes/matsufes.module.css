@@ -6,6 +6,7 @@
 }
 
 .sideWave {
+    display: none;
   background-color: var(--color-orange) !important;
 }
 
