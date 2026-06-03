@@ -25,7 +25,7 @@ export default function AboutPage() {
                 "An exhibitor portal site for the Matsugasaki Festival."
               ),
               t(
-                "ぴよナビでは、出展申込から松ヶ崎祭当日までに必要な情報を、ひとつの場所でまとめて確認・管理することができます。各種提出物の管理、お支払い情報の確認、最新のお知らせの受け取りなど、出展者の皆さまの負担を少しでも軽くできるよう設計しています。",
+                "ぴよナビでは、出展申込みから松ヶ崎祭当日までに必要な情報を、ひとつの場所でまとめて確認・管理することができます。各種提出物の管理、お支払い情報の確認、最新のお知らせの受け取りなど、出展者の皆さまの負担を少しでも軽くできるよう設計しています。",
                 "Piyo Navi lets you check and manage all the information you need from application through the day of the festival, all in one place. From managing submissions and confirming payment information to receiving the latest announcements, it is designed to lighten the load for exhibitor groups."
               ),
               t(
