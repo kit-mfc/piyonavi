@@ -52,7 +52,7 @@ function escapeHtml(input: string): string {
 function sendToDiscord(args: {
   name: string;
   email: string;
-  group: string;
+  group: string | null;
   categoryLabel: string;
   message: string;
 }): Promise<void> | null {
@@ -71,7 +71,7 @@ function sendToDiscord(args: {
           fields: [
             { name: "お名前", value: args.name.slice(0, 256) },
             { name: "メールアドレス", value: args.email.slice(0, 256) },
-            { name: "団体名", value: args.group.slice(0, 256), inline: true },
+            ...(args.group ? [{ name: "団体名", value: args.group.slice(0, 256), inline: true }] : []),
             { name: "お問い合わせ内容", value: args.message.slice(0, 1024) },
           ],
         },
@@ -87,7 +87,7 @@ function sendToDiscord(args: {
 function sendToEmail(args: {
   name: string;
   email: string;
-  group: string;
+  group: string | null;
   categoryLabel: string;
   message: string;
 }): Promise<void> | null {
@@ -97,7 +97,7 @@ function sendToEmail(args: {
   const rows: Array<[string, string]> = [
     ["お名前", args.name],
     ["メールアドレス", args.email],
-    ["団体名", args.group],
+    ...(args.group ? ([["団体名", args.group]] as Array<[string, string]>) : []),
     ["お問い合わせ種別", args.categoryLabel],
   ];
 
@@ -121,7 +121,7 @@ function sendToEmail(args: {
   const text = [
     `お名前: ${args.name}`,
     `メールアドレス: ${args.email}`,
-    `団体名: ${args.group}`,
+    ...(args.group ? [`団体名: ${args.group}`] : []),
     `お問い合わせ種別: ${args.categoryLabel}`,
     "",
     "お問い合わせ内容:",
@@ -133,7 +133,7 @@ function sendToEmail(args: {
       from: `ぴよナビお問い合わせフォーム`,
       to: MAIL_TO,
       replyTo: args.email,
-      subject: `【ぴよナビお問い合わせフォーム】${args.categoryLabel} - ${args.group}様`,
+      subject: `【ぴよナビお問い合わせフォーム】${args.categoryLabel} - ${args.group ?? args.name}様`,
       html,
       text,
     })
@@ -154,7 +154,7 @@ export async function POST(request: Request) {
   const category = (body.category ?? "").trim();
   const message = (body.message ?? "").trim();
 
-  if (!name || !email || !group || !category || !message) {
+  if (!name || !email || !category || !message || (category !== "individual" && !group)) {
     return NextResponse.json({ ok: false, error: "必須項目が未入力です。" }, { status: 400 });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -164,7 +164,7 @@ export async function POST(request: Request) {
   const args = {
     name,
     email,
-    group,
+    group: group || null,
     categoryLabel: CATEGORY_LABELS[category] ?? category,
     message,
   };
