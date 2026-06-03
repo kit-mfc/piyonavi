@@ -10,7 +10,7 @@ import { useTranslation } from "./i18n/LanguageProvider";
 export default function HomePage() {
   const t = useTranslation();
   const lead = t(
-    "出展者向けの情報提供・提出物管理ポータルサイトです。\n出展に必要な情報の確認・各種出展物の管理を行えます。",
+    "松ヶ崎祭出展者向けの情報提供・提出物管理ポータルサイトです。\n出展に必要な情報の確認・各種出展物の管理を行えます。",
     "An information and submission portal for exhibitors.\nCheck the information you need and manage your exhibitor materials."
   ).split("\n");
   const topics = [
@@ -74,7 +74,7 @@ export default function HomePage() {
             <span className={styles.heroLoginCardIcon}>
               <Image
                 src="/imgs/login-child.svg"
-                alt={t("ログインするひよこ", "Chick logging in")}
+                alt={t("ログイン", "Chick logging in")}
                 width={64}
                 height={64}
               />
