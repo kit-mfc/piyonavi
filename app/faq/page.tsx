@@ -38,8 +38,8 @@ export default function FaqPage() {
         "Is it possible to exhibit together with people from outside the university?"
       ),
       a: t(
-        "本学の学生を含む団体であれば出展は可能です。ですが今年は学内の団体(公認、非公認問わず)の出展を優先させていただきます。",
-        "Exhibiting is possible as long as the group includes students of our university. However, this year we will give priority to on-campus groups (whether officially recognized or not)."
+        "本学の学生を含む団体であれば出展は可能です。ただ、学内の団体(公認、非公認問わず)の出展を優先させていただきます。",
+        "Exhibiting is possible as long as the group includes students of our university. However, we will give priority to on-campus groups (whether officially recognized or not)."
       ),
     },
     {
