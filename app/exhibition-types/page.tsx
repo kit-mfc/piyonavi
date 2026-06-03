@@ -130,7 +130,7 @@ export default function ExhibitionTypesPage() {
               <Image src="/imgs/sprout.svg" alt={t("まつぴよの頭", "Sprout icon")} width={40} height={28} className={styles.sprout} />
               <h1 className={styles.title}>{t("出展形態の紹介", "Exhibition Types")}</h1>
             </div>
-            <p className={styles.lead}>{t("各出展形態の概要と必要な提出物をご案内します。\n複数の出展形態を兼ねることも可能です。", "An overview of each exhibition type and the submissions required.\nMultiple exhibition types can be combined.")}</p>
+            <p className={styles.lead}>{t("各出展形態の概要と必要な提出物をご案内します。\n個人出展以外は、複数の出展形態を兼ねることも可能です。", "An overview of each exhibition type and the submissions required.\nMultiple exhibition types can be combined except for individual exhibits.")}</p>
             <Link href="/diagnosis" className={styles.soloCta}>
               <span className={styles.soloCtaLabel}>
                 {t("出展形態診断はこちら", "Take the exhibition type quiz")}

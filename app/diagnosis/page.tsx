@@ -10,8 +10,8 @@ import { useTranslation } from "../i18n/LanguageProvider";
 export default function DiagnosisPage() {
   const t = useTranslation();
   const lead = t(
-    "あなたの出展形態を、こちらのチャートで診断することができます。\n自分の出展形態がわからない方は、ぜひお試しください。\n複数の出展形態を兼ねることも可能です。",
-    "Use this chart to find out your exhibition type.\nIf you're unsure which type fits your group, give it a try. You can also have multiple exhibition types."
+    "あなたの出展形態を、こちらのチャートで診断することができます。\n自分の出展形態がわからない方は、ぜひお試しください。\n個人出展以外は、複数の出展形態を兼ねることも可能です。",
+    "Use this chart to find out your exhibition type.\nIf you're unsure which type fits your group, give it a try. You can also have multiple exhibition types except for individual exhibits."
   ).split("\n");
 
   return (
