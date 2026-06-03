@@ -5,10 +5,11 @@ import Image from "next/image";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import styles from "./page.module.css";
-import { useTranslation } from "./i18n/LanguageProvider";
+import { useLanguage } from "./i18n/LanguageProvider";
+import { newsItems } from "./news/newsData";
 
 export default function HomePage() {
-  const t = useTranslation();
+  const { t, lang } = useLanguage();
   const lead = t(
     "松ヶ崎祭出展者向けの情報提供・提出物管理ポータルサイトです。\n出展に必要な情報の確認・各種出展物の管理を行えます。",
     "An information and submission portal for exhibitors.\nCheck the information you need and manage your exhibitor materials."
@@ -55,15 +56,7 @@ export default function HomePage() {
       href: "/m-1",
     },
   ];
-  const news = [
-    {
-      date: "2026-06-03",
-      text: t(
-        "松ヶ崎祭出展者用ポータル『ぴよナビ』が公開されました！",
-        "The Matsugasaki Festival exhibitor portal “Piyo Navi” has been released!"
-      ),
-    },
-  ];
+  const news = newsItems.slice(0, 3);
 
   return (
     <div className="page-wrap">
@@ -155,10 +148,10 @@ export default function HomePage() {
             <h2 className={styles.sectionTitle}>{t("お知らせ", "News")}</h2>
           </div>
           <div className={styles.newsList}>
-            {news.map((n, i) => (
-              <Link key={i} href="/news" className={styles.newsItem}>
+            {news.map((n) => (
+              <Link key={n.id} href={`/news/${n.id}`} className={styles.newsItem}>
                 <span className={styles.newsDate}>{n.date}</span>
-                <span className={styles.newsText}>{n.text}</span>
+                <span className={styles.newsText}>{n.title[lang]}</span>
               </Link>
             ))}
           </div>

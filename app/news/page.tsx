@@ -1,21 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "../about/about.module.css";
-import { useTranslation } from "../i18n/LanguageProvider";
+import { useLanguage } from "../i18n/LanguageProvider";
+import { newsItems } from "./newsData";
 
 export default function NewsPage() {
-  const t = useTranslation();
-  const items = [
-    {
-      date: "2026-06-03",
-      title: t(
-        "松ヶ崎祭出展者用ポータル『ぴよナビ』が公開されました！",
-        "The Matsugasaki Festival exhibitor portal “Piyo Navi” has been released!"
-      ),
-    },
-  ];
+  const { t, lang } = useLanguage();
   return (
     <div className="page-wrap">
       <Header />
@@ -27,22 +20,18 @@ export default function NewsPage() {
               <span>{t("お知らせ", "News")}</span>
             </div>
           </div>
-          <ul style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {items.map((n, i) => (
-              <li
-                key={i}
-                style={{
-                  backgroundColor: "var(--color-white)",
-                  borderRadius: 999,
-                  padding: "14px 28px",
-                  display: "flex",
-                  gap: 24,
-                  alignItems: "center",
-                  fontSize: 16,
-                }}
-              >
-                <span style={{ color: "var(--color-text-muted)", flexShrink: 0 }}>{n.date}</span>
-                <span>{n.title}</span>
+          <ul className={styles.newsList}>
+            {newsItems.map((n) => (
+              <li key={n.id}>
+                <Link href={`/news/${n.id}`} className={styles.newsLink}>
+                  <span className={styles.newsDate}>{n.date}</span>
+                  <span className={styles.newsTitle}>{n.title[lang]}</span>
+                  <span className={styles.newsArrow} aria-hidden="true">
+                    <svg viewBox="0 0 8 12" width="8" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.5 1.5L6.5 6L1.5 10.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>
