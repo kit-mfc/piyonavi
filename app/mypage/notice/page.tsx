@@ -8,7 +8,7 @@ export default function NoticePage() {
   const t = useTranslation();
   const items = [
     {
-      date: "2026-05-30",
+      date: "2026-06-03",
       title: t("出展団体ポータル『ぴよナビ』が公開されました！", "The exhibitor portal “Piyo Navi” has been released!"),
     },
   ];

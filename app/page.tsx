@@ -57,7 +57,7 @@ export default function HomePage() {
   ];
   const news = [
     {
-      date: "2026-05-30",
+      date: "2026-06-03",
       text: t(
         "松ヶ崎祭出展者ポータル『ぴよナビ』が公開されました！",
         "The Matsugasaki Festival exhibitor portal “Piyo Navi” has been released!"

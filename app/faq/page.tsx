@@ -64,11 +64,11 @@ export default function FaqPage() {
     },
     {
       q: t(
-        "物販・展示で教室を借りる際、２つ以降からかかる出展料はどうなりますか？",
+        "物販・展示で教室を借りる際、２つ目以降からかかる出展料はどうなりますか？",
         "When renting classrooms for sales or exhibitions, what is the exhibition fee from the second classroom onward?"
       ),
       a: t(
-        "3つ目の教室まで、既定の料金です。4つ以降の教室ごとに追加で1000円いただきます。",
+        "3つ目の教室まで、既定の料金です。4つ目以降の教室ごとに追加で1000円いただきます。",
         "Up to the third classroom, the standard fee applies. From the fourth classroom onward, an additional 1,000 yen is charged per classroom."
       ),
     },
