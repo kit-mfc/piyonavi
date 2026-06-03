@@ -154,7 +154,7 @@ export async function POST(request: Request) {
   const category = (body.category ?? "").trim();
   const message = (body.message ?? "").trim();
 
-  if (!name || !email || !category || !message || (category !== "individual" && !group)) {
+  if (!name || !email || !category || !message) {
     return NextResponse.json({ ok: false, error: "必須項目が未入力です。" }, { status: 400 });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {

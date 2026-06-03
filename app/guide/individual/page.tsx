@@ -32,7 +32,7 @@ function highlight(text: string, words: string[]) {
   );
 }
 
-export default function GuideSoloPage() {
+export default function GuideIndividualPage() {
   const t = useTranslation();
   return (
     <div className="page-wrap">
@@ -48,12 +48,12 @@ export default function GuideSoloPage() {
                 height={28}
                 className={styles.sprout}
               />
-              <h1 className={styles.title}>{t("個人出展専用ガイド", "Solo Exhibitor Guide")}</h1>
+              <h1 className={styles.title}>{t("個人出展専用ガイド", "Individual Exhibitor Guide")}</h1>
             </div>
             <p className={styles.lead}>
               {t(
                 "個人出展の、出展申込みから松ヶ崎祭当日までの流れをご案内します。",
-                "This guide will walk you through the process for solo exhibitors, from application to the day of the Matsugasaki Festival."
+                "This guide will walk you through the process for individual exhibitors, from application to the day of the Matsugasaki Festival."
               )}
             </p>
             <Link href="/guide" className={styles.soloCta}>
@@ -73,7 +73,7 @@ export default function GuideSoloPage() {
             <li className={styles.step}>
               <span className={styles.stepNum}>1</span>
               <div className={styles.stepBody}>
-                <h2 className={styles.stepTitle}>{t("個人出展規約の確認", "Review the solo exhibitor rules")}</h2>
+                <h2 className={styles.stepTitle}>{t("個人出展規約の確認", "Review the individual exhibitor rules")}</h2>
                 <div className={styles.stepCard}>
                   <p className={styles.stepText}>
                     {t(
@@ -97,7 +97,7 @@ export default function GuideSoloPage() {
                     {highlight(
                       t(
                         "「個人出展申込みフォーム」に必要事項を入力し、お申し込みください。\nお申し込みいただいた団体には、後日管理番号とパスワードが発行されます。",
-                        "Fill in the required fields on the solo exhibitor application form and submit your application.\nGroups that apply will later be issued a group number and password."
+                        "Fill in the required fields on the individual exhibitor application form and submit your application.\nGroups that apply will later be issued a group number and password."
                       ),
                       [t("管理番号", "group number"), t("パスワード", "password")]
                     )}
@@ -128,12 +128,12 @@ export default function GuideSoloPage() {
             <li className={styles.step}>
               <span className={styles.stepNum}>4</span>
               <div className={styles.stepBody}>
-                <h2 className={styles.stepTitle}>{t("個人出展説明会への参加", "Attend the solo exhibitor briefing")}</h2>
+                <h2 className={styles.stepTitle}>{t("個人出展説明会への参加", "Attend the individual exhibitor briefing")}</h2>
                 <div className={styles.stepCard}>
                   <p className={styles.stepText}>
                     {t(
                       "個人出展説明会に必ずご参加ください。\n説明会の詳細は「お知らせ」をご確認ください。",
-                      "Please attend the solo exhibitor briefing.\nFor details about the briefing, please check the \"News\" page."
+                      "Please attend the individual exhibitor briefing.\nFor details about the briefing, please check the \"News\" page."
                     )}
                   </p>
                   <Link href="/news" className={styles.stepCta}>

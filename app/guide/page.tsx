@@ -56,9 +56,9 @@ export default function GuidePage() {
                 "A walkthrough from application to the day of the Matsugasaki Festival."
               )}
             </p>
-            <Link href="/guide/solo" className={styles.soloCta}>
+            <Link href="/guide/individual" className={styles.soloCta}>
               <span className={styles.soloCtaLabel}>
-                {t("個人出展専用ガイドはこちら", "Guide for solo exhibitors")}
+                {t("個人出展専用ガイドはこちら", "Guide for individual exhibitors")}
               </span>
               <span className={styles.soloCtaArrow} aria-hidden="true">
                 <svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">

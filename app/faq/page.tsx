@@ -58,7 +58,7 @@ export default function FaqPage() {
         "We would like to know the tent sizes."
       ),
       a: t(
-        "全面テントの場合、2K×3K(3.6m×5.4m) 半面テントの場合、2K×1.5K(3.6m×2.7m)です。",
+        "全面テントの場合、2K×3K(3.6m×5.4m) 、半面テントの場合、2K×1.5K(3.6m×2.7m)です。",
         "A full tent is 2K×3K (3.6m×5.4m), and a half tent is 2K×1.5K (3.6m×2.7m)."
       ),
     },

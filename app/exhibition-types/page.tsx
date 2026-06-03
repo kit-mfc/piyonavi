@@ -106,12 +106,12 @@ export default function ExhibitionTypesPage() {
       ],
     },
     {
-      title: t("個人出展", "Solo Exhibition"),
-      en: "solo exhibition",
+      title: t("個人出展", "Individual Exhibition"),
+      en: "individual exhibition",
       icon: "/imgs/icon-solo.svg",
       text: t(
         "個人で物販や展示を行う出展形態です。",
-        "Solo exhibitor format for selling goods or displaying works."
+        "Individual exhibitor format for selling goods or displaying works."
       ),
       submissions: [
         t("参加同意書", "Participation agreement"),

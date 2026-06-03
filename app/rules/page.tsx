@@ -58,7 +58,7 @@ export default function RulesPage() {
               className={styles.soloCta}
             >
               <span className={styles.soloCtaLabel}>
-                {t("個人出展規約を確認する", "View the solo exhibitor rules")}
+                {t("個人出展規約を確認する", "View the individual exhibitor rules")}
               </span>
               <span className={styles.soloCtaArrow} aria-hidden="true">
                 <svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">

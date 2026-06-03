@@ -78,16 +78,13 @@ export default function ContactPage() {
             </label>
 
             <label className={styles.field}>
-              <span className={styles.label}>
-                {form.category === "individual" ? t("団体名 (任意)", "Group name (optional)") : t("団体名", "Group name")}
-              </span>
+              <span className={styles.label}>{t("団体名 (任意)", "Group name (optional)")}</span>
               <input
                 type="text"
                 className={styles.input}
                 placeholder={t("個人出展の場合は記入不要です", "Not required for individual exhibits")}
                 value={form.group}
                 onChange={update("group")}
-                required={form.category !== "individual"}
               />
             </label>
 
