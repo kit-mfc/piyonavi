@@ -7,6 +7,15 @@ import { useTranslation } from "../i18n/LanguageProvider";
 
 export default function NewsPage() {
   const t = useTranslation();
+  const items = [
+    {
+      date: "2026-05-30",
+      title: t(
+        "出展者ポータル『ぴよナビ』が公開されました！",
+        "The exhibitor portal “Piyo Navi” has been released!"
+      ),
+    },
+  ];
   return (
     <div className="page-wrap">
       <Header />
@@ -15,11 +24,11 @@ export default function NewsPage() {
         <div className={styles.inner}>
           <div className={styles.cloudTitleWrap}>
             <div className={styles.cloudTitle}>
-              <span>{t.pages.news.title}</span>
+              <span>{t("お知らせ", "News")}</span>
             </div>
           </div>
           <ul style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {t.pages.news.items.map((n, i) => (
+            {items.map((n, i) => (
               <li
                 key={i}
                 style={{

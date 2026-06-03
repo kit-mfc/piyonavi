@@ -8,18 +8,18 @@ export default function TasksPage() {
   const t = useTranslation();
   return (
     <>
-      <h1 className={styles.pageTitle}>{t.pages.mypageTasks.title}</h1>
+      <h1 className={styles.pageTitle}>{t("タスク管理", "Tasks")}</h1>
 
       <div className={styles.singleTaskCard}>
         <div className={styles.singleTaskText}>
-          <h3>{t.pages.mypageTasks.sampleTaskName}</h3>
-          <p>{t.pages.mypageTasks.sampleTaskDeadline}</p>
+          <h3>{t("パンフレット掲載用画像の提出", "Submit pamphlet image")}</h3>
+          <p>{t("締切：2026/08/31 23:59", "Deadline: 2026/08/31 23:59")}</p>
         </div>
-        <span className={styles.taskBadge}>{t.pages.mypageTasks.badge}</span>
+        <span className={styles.taskBadge}>{t("残り100日", "100 days left")}</span>
       </div>
 
       <div className={styles.mascot}>
-        <Image src="/imgs/matsu-sleeping.png" alt="" width={150} height={150} />
+        <Image src="/imgs/matsu-sleeping.png" alt={t("眠っているマスコット", "Sleeping mascot")} width={150} height={150} />
       </div>
     </>
   );

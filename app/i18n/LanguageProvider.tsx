@@ -1,15 +1,20 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { LANGUAGES, translations, type Language, type Translation } from "./translations";
+
+export type Language = "ja" | "en";
+
+export const LANGUAGES: Language[] = ["ja", "en"];
 
 const STORAGE_KEY = "piyonavi.lang";
+
+export type TFunction = (ja: string, en: string) => string;
 
 type LanguageContextValue = {
   lang: Language;
   setLang: (lang: Language) => void;
   toggleLang: () => void;
-  t: Translation;
+  t: TFunction;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -51,9 +56,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
+  const t = useCallback<TFunction>((ja, en) => (lang === "ja" ? ja : en), [lang]);
+
   const value = useMemo<LanguageContextValue>(
-    () => ({ lang, setLang, toggleLang, t: translations[lang] }),
-    [lang, setLang, toggleLang],
+    () => ({ lang, setLang, toggleLang, t }),
+    [lang, setLang, toggleLang, t],
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
@@ -67,6 +74,6 @@ export function useLanguage() {
   return ctx;
 }
 
-export function useTranslation() {
+export function useTranslation(): TFunction {
   return useLanguage().t;
 }

@@ -9,13 +9,60 @@ import { useTranslation } from "./i18n/LanguageProvider";
 
 export default function HomePage() {
   const t = useTranslation();
-  const lead = t.pages.home.lead.split("\n");
+  const lead = t(
+    "出展者向けの情報提供・提出物管理ポータルサイトです。\n出展に必要な情報の確認・各種出展物の管理を行えます。",
+    "An information and submission portal for exhibitors.\nCheck the information you need and manage your exhibitor materials."
+  ).split("\n");
   const topics = [
-    { ...t.pages.home.topics.matsufes, href: "/matsufes" },
-    { ...t.pages.home.topics.about, href: "/about" },
-    { ...t.pages.home.topics.guide, href: "/guide" },
-    { ...t.pages.home.topics.diagnosis, href: "/diagnosis" },
-    { ...t.pages.home.topics.m1, href: "/m-1" },
+    {
+      title: t("松ヶ崎祭とは", "About Matsugasaki Festival"),
+      text: t(
+        "松ヶ崎祭の概要を\nご紹介します。",
+        "Learn about the overview of the Matsugasaki Festival."
+      ),
+      href: "/matsufes",
+    },
+    {
+      title: t("ぴよナビとは", "About Piyo Navi"),
+      text: t(
+        "ポータルの使い方や機能を\nご紹介します。",
+        "Learn how to use this portal and its features."
+      ),
+      href: "/about",
+    },
+    {
+      title: t("出展ガイド", "Exhibitor Guide"),
+      text: t(
+        "申込みから当日までの流れを\nご案内します。",
+        "A walkthrough from application to the day of the festival."
+      ),
+      href: "/guide",
+    },
+    {
+      title: t("出展形態診断", "Exhibition Type Quiz"),
+      text: t(
+        "あなたの出展形態がわかる\n診断チャート。",
+        "A chart that helps you find your exhibition type."
+      ),
+      href: "/diagnosis",
+    },
+    {
+      title: t("m-1グランプリについて", "About the m-1 Grand Prix"),
+      text: t(
+        "m-1グランプリに\n関する情報はこちら。",
+        "Information about the m-1 Grand Prix."
+      ),
+      href: "/m-1",
+    },
+  ];
+  const news = [
+    {
+      date: "2026-05-30",
+      text: t(
+        "松ヶ崎祭出展者ポータル『ぴよナビ』が公開されました！",
+        "The Matsugasaki Festival exhibitor portal “Piyo Navi” has been released!"
+      ),
+    },
   ];
 
   return (
@@ -27,20 +74,20 @@ export default function HomePage() {
             <span className={styles.heroLoginCardIcon}>
               <Image
                 src="/imgs/login-child.svg"
-                alt=""
+                alt={t("ログインするひよこ", "Chick logging in")}
                 width={64}
                 height={64}
               />
             </span>
             <span className={styles.heroLoginCardText}>
-              <span>{t.pages.home.loginCardLine1}</span>
-              <span>{t.pages.home.loginCardLine2}</span>
+              <span>{t("ログインは", "Log in")}</span>
+              <span>{t("こちらから", "from here")}</span>
             </span>
           </Link>
           <h1 className={styles.heroTitle}>
             <Image
               src="/imgs/piyo-navi-logo-2.svg"
-              alt={t.pages.home.logoAlt}
+              alt={t("ぴよナビ", "Piyo Navi")}
               width={350}
               height={77}
               priority
@@ -49,7 +96,7 @@ export default function HomePage() {
           <Image
             className={styles.heroSprout}
             src="/imgs/icon.svg"
-            alt=""
+            alt={t("ぴよナビのアイコン", "Piyo Navi icon")}
             width={48}
             height={32}
           />
@@ -61,9 +108,9 @@ export default function HomePage() {
               </span>
             ))}
           </p>
-          <Link href="/login" className="btn btn--green">{t.pages.home.loginButton}</Link>
+          <Link href="/login" className="btn btn--green">{t("団体ログイン", "Exhibitor Login")}</Link>
           <div className={styles.scrollIndicator} aria-hidden="true">
-            <span className={styles.scrollIndicatorText}>{t.pages.home.scroll}</span>
+            <span className={styles.scrollIndicatorText}>{t("SCROLL", "SCROLL")}</span>
             <span className={styles.scrollIndicatorDot} />
             <span className={styles.scrollIndicatorLine} />
             <svg className={styles.scrollIndicatorArrow} viewBox="0 0 12 8" fill="none">
@@ -74,8 +121,8 @@ export default function HomePage() {
 
         <section className={styles.topics}>
           <div className={styles.sectionHeading}>
-            <Image src="/imgs/sprout.svg" alt="" width={32} height={32} className={styles.sectionSprout} />
-            <h2 className={styles.sectionTitle}>{t.pages.home.topicsHeading}</h2>
+            <Image src="/imgs/sprout.svg" alt={t("まつぴよの頭", "Sprout icon")} width={32} height={32} className={styles.sectionSprout} />
+            <h2 className={styles.sectionTitle}>{t("トピックス", "Topics")}</h2>
           </div>
           <div className={styles.topicsGrid}>
             {topics.map((topic) => {
@@ -104,11 +151,11 @@ export default function HomePage() {
 
         <section className={styles.news}>
           <div className={styles.sectionHeading}>
-            <Image src="/imgs/sprout.svg" alt="" width={32} height={32} className={styles.sectionSprout} />
-            <h2 className={styles.sectionTitle}>{t.pages.home.newsHeading}</h2>
+            <Image src="/imgs/sprout.svg" alt={t("まつぴよの頭", "Sprout icon")} width={32} height={32} className={styles.sectionSprout} />
+            <h2 className={styles.sectionTitle}>{t("お知らせ", "News")}</h2>
           </div>
           <div className={styles.newsList}>
-            {t.pages.home.news.map((n, i) => (
+            {news.map((n, i) => (
               <Link key={i} href="/news" className={styles.newsItem}>
                 <span className={styles.newsDate}>{n.date}</span>
                 <span className={styles.newsText}>{n.text}</span>
@@ -118,7 +165,7 @@ export default function HomePage() {
         </section>
 
         <div className={styles.mascotRow}>
-          <Image src="/imgs/matsu-flying.png" alt="" width={140} height={140} />
+          <Image src="/imgs/matsu-flying.png" alt={t("空を飛ぶマスコット", "Flying mascot")} width={140} height={140} />
         </div>
       </main>
       <Footer />

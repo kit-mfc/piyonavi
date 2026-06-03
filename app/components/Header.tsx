@@ -24,14 +24,14 @@ export default function Header({ wave = true }: { wave?: boolean }) {
         <Link href="/" className="site-header__brand">
           <Image
             src="/imgs/icon.svg"
-            alt={t.common.header.logoAlt}
+            alt={t("松ヶ崎祭ロゴ", "Matsugasaki Festival logo")}
             width={50}
             height={50}
             className="site-header__brand-logo"
           />
           <div className="site-header__brand-text">
-            <strong>{t.common.header.brandLine1}</strong>
-            <strong>{t.common.header.brandLine2}</strong>
+            <strong>{t("松ヶ崎祭", "Matsugasaki Festival")}</strong>
+            <strong>{t("出展者用ポータル", "Exhibitor Portal")}</strong>
           </div>
         </Link>
         <div className="site-header__actions">
@@ -49,7 +49,7 @@ export default function Header({ wave = true }: { wave?: boolean }) {
           <button
             className="menu-btn"
             type="button"
-            aria-label={t.common.header.menuOpen}
+            aria-label={t("メニューを開く", "Open menu")}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(true)}
           >
@@ -70,7 +70,7 @@ export default function Header({ wave = true }: { wave?: boolean }) {
         >
           <Image
             src="/imgs/icon.svg"
-            alt={t.common.header.logoAlt}
+            alt={t("松ヶ崎祭ロゴ", "Matsugasaki Festival logo")}
             width={50}
             height={50}
             className="site-header__brand-logo"
@@ -79,7 +79,7 @@ export default function Header({ wave = true }: { wave?: boolean }) {
         <button
           className="menu-btn site-header__floating-menu"
           type="button"
-          aria-label={t.common.header.menuOpen}
+          aria-label={t("メニューを開く", "Open menu")}
           aria-expanded={menuOpen}
           tabIndex={scrolled ? undefined : -1}
           onClick={() => setMenuOpen(true)}

@@ -11,19 +11,19 @@ export default function MyPageSidebar() {
   const t = useTranslation();
 
   const items = [
-    { label: t.common.mypageSidebar.items.home, href: "/mypage", icon: "/imgs/icon-home.svg" },
-    { label: t.common.mypageSidebar.items.tasks, href: "/mypage/tasks", icon: "/imgs/icon-task.svg" },
-    { label: t.common.mypageSidebar.items.webInfo, href: "/mypage/web-info", icon: "/imgs/icon-web.svg" },
-    { label: t.common.mypageSidebar.items.payment, href: "/mypage/payment", icon: "/imgs/icon-payment.svg" },
-    { label: t.common.mypageSidebar.items.notice, href: "/mypage/notice", icon: "/imgs/icon-notice.svg" },
-    { label: t.common.mypageSidebar.items.contact, href: "/mypage/contact", icon: "/imgs/icon-contact.svg" },
+    { label: t("ホーム", "Home"), href: "/mypage", icon: "/imgs/icon-home.svg" },
+    { label: t("タスク管理", "Tasks"), href: "/mypage/tasks", icon: "/imgs/icon-task.svg" },
+    { label: t("WEB公開情報", "Web Info"), href: "/mypage/web-info", icon: "/imgs/icon-web.svg" },
+    { label: t("支払い情報", "Payment"), href: "/mypage/payment", icon: "/imgs/icon-payment.svg" },
+    { label: t("おしらせ", "Notices"), href: "/mypage/notice", icon: "/imgs/icon-notice.svg" },
+    { label: t("お問い合わせ", "Contact"), href: "/mypage/contact", icon: "/imgs/icon-contact.svg" },
   ];
 
-  const logoutLines = t.common.mypageSidebar.logout.split("\n");
+  const logoutLines = t("ログアウト\nする", "Log\nout").split("\n");
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.title}>{t.common.mypageSidebar.title}</div>
+      <div className={styles.title}>{t("マイページ", "My Page")}</div>
       <nav>
         <ul className={styles.list}>
           {items.map((item) => {
@@ -34,7 +34,7 @@ export default function MyPageSidebar() {
                   href={item.href}
                   className={`${styles.item} ${active ? styles.itemActive : ""}`}
                 >
-                  <Image src={item.icon} alt="" width={24} height={24} />
+                  <Image src={item.icon} alt={item.label} width={24} height={24} />
                   <span>{item.label}</span>
                 </Link>
               </li>

@@ -29,6 +29,7 @@ html, body {
   font-family: var(--font-japanese);
   color: var(--color-text);
   background-color: var(--color-bg);
+  font-weight: 500;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "palt";
@@ -92,7 +93,7 @@ ul, ol {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -60px;
+  bottom: -59px;
   height: 60px;
   background-color: var(--color-orange);
   -webkit-mask-image: url("/imgs/wave-bottom.svg");
@@ -256,7 +257,7 @@ ul, ol {
   position: absolute;
   left: 0;
   right: 0;
-  top: -60px;
+  top: -59px;
   height: 60px;
   background-color: var(--color-brown);
   -webkit-mask-image: url("/imgs/wave-bottom.svg");
@@ -296,7 +297,7 @@ ul, ol {
 }
 
 .site-footer__brand .footer-univ {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   opacity: 0.85;
 }
@@ -396,6 +397,7 @@ ul, ol {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 16px;
   }
   .site-footer__logo {
     height: 28px;

@@ -13,13 +13,13 @@ export default function MenuOverlay({
 }) {
   const t = useTranslation();
   const menuItems = [
-    { label: t.common.menu.items.home, href: "/" },
-    { label: t.common.menu.items.news, href: "/news" },
-    { label: t.common.menu.items.guide, href: "/guide" },
-    { label: t.common.menu.items.exhibitionTypes, href: "/exhibition-types" },
-    { label: t.common.menu.items.rules, href: "/rules" },
-    { label: t.common.menu.items.faq, href: "/faq" },
-    { label: t.common.menu.items.contact, href: "/contact" },
+    { label: t("ホーム", "Home"), href: "/" },
+    { label: t("お知らせ", "News"), href: "/news" },
+    { label: t("出展ガイド", "Exhibitor Guide"), href: "/guide" },
+    { label: t("出展形態", "Exhibition Types"), href: "/exhibition-types" },
+    { label: t("出展規約", "Exhibitor Rules"), href: "/rules" },
+    { label: t("よくある質問", "FAQ"), href: "/faq" },
+    { label: t("お問い合わせ", "Contact"), href: "/contact" },
   ];
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function MenuOverlay({
       className={`menu-overlay${isOpen ? " menu-overlay--open" : ""}`}
       role="dialog"
       aria-modal="true"
-      aria-label={t.common.menu.label}
+      aria-label={t("メニュー", "Menu")}
       aria-hidden={!isOpen}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -58,7 +58,7 @@ export default function MenuOverlay({
       <button
         className="menu-overlay__close"
         type="button"
-        aria-label={t.common.menu.close}
+        aria-label={t("メニューを閉じる", "Close menu")}
         onClick={onClose}
         tabIndex={isOpen ? 0 : -1}
       >

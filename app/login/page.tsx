@@ -14,7 +14,7 @@ export default function LoginPage() {
     <div className={styles.wrap}>
       <div className={styles.patternBg} aria-hidden="true" />
 
-      <Link href="/" className={styles.closeBtn} aria-label={t.pages.login.closeAlt}>
+      <Link href="/" className={styles.closeBtn} aria-label={t("閉じる", "Close")}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
           <line x1="5" y1="5" x2="19" y2="19" />
           <line x1="19" y1="5" x2="5" y2="19" />
@@ -22,39 +22,39 @@ export default function LoginPage() {
       </Link>
 
       <div className={styles.mascot}>
-        <Image src="/imgs/matsu-hurry.png" alt="" width={200} height={200} />
+        <Image src="/imgs/matsu-hurry.png" alt={t("急いでいるマスコット", "Mascot in a hurry")} width={200} height={200} />
       </div>
 
       <main className={styles.card}>
         <h1 className={styles.brand}>
           <Image
             src="/imgs/piyo-navi-logo.svg"
-            alt={t.pages.login.logoAlt}
+            alt={t("ぴよナビ", "Piyo Navi")}
             width={350}
             height={77}
             priority
           />
         </h1>
-        <h2 className={styles.title}>{t.pages.login.title}</h2>
+        <h2 className={styles.title}>{t("ログイン", "Log In")}</h2>
 
         <form
           className={styles.form}
           onSubmit={(e) => {
             e.preventDefault();
-            setError(t.pages.login.error);
+            setError(t("団体番号またはパスワードが異なります", "Group number or password is incorrect"));
           }}
         >
           <label className={styles.field}>
             <input
               type="text"
-              placeholder={t.pages.login.placeholders.groupNumber}
+              placeholder={t("団体番号", "Group number")}
               className={styles.input}
             />
           </label>
           <label className={styles.field}>
             <input
               type="password"
-              placeholder={t.pages.login.placeholders.password}
+              placeholder={t("パスワード", "Password")}
               className={styles.input}
             />
           </label>
@@ -63,7 +63,7 @@ export default function LoginPage() {
 
           <div className={styles.submitWrap}>
             <button type="submit" className={styles.submitBtn}>
-              {t.pages.login.submit}<br />{t.pages.login.submitLine2}
+              {t("ログイン", "Log")}<br />{t("する", "in")}
             </button>
           </div>
         </form>
