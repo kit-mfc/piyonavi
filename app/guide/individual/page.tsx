@@ -108,7 +108,7 @@ export default function GuideIndividualPage() {
                       "* You can log in to My Page with your management number and password."
                     )}
                   </p>
-                  <Link href="https://forms.gle/YfhZK6S83B1s92aA6" className={styles.stepCta}>
+                  <Link href="https://forms.gle/YfhZK6S83B1s92aA6" target="_blank" rel="noopener noreferrer" className={styles.stepCta}>
                     {t("個人出展申込みフォーム", "Individual Exhibitor Application Form")}
                     <StepCtaArrow />
                   </Link>
