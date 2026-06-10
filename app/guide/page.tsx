@@ -139,15 +139,15 @@ export default function GuidePage() {
                     {highlight(
                       t(
                         "出展団体説明会後に公開される「出展申込みフォーム」に必要事項を入力し、お申し込みください。\nお申し込みいただいた団体には、後日管理番号とパスワードが発行されます。",
-                        "Fill in the required fields on the exhibitor application form, which is released after the exhibitor briefing, and submit your application.\nGroups that apply will later be issued a group number and password."
+                        "Fill in the required fields on the exhibitor application form, which is released after the exhibitor briefing, and submit your application.\nGroups that apply will later be issued a management number and password."
                       ),
-                      [t("管理番号", "group number"), t("パスワード", "password")]
+                      [t("管理番号", "management number"), t("パスワード", "password")]
                     )}
                   </p>
                   <p className={styles.stepNote}>
                     {t(
                       "※出展申込みフォームは、ぴよナビ上で公開されません。管理番号とパスワードで、マイページへログインできます。",
-                      "* The exhibitor application form is not published on PiyoNavi. You can log in to My Page with your group number and password."
+                      "* The exhibitor application form is not published on PiyoNavi. You can log in to My Page with your management number and password."
                     )}
                   </p>
                 </div>

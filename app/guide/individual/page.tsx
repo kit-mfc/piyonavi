@@ -97,17 +97,21 @@ export default function GuideIndividualPage() {
                     {highlight(
                       t(
                         "「個人出展申込みフォーム」に必要事項を入力し、お申し込みください。\nお申し込みいただいた団体には、後日管理番号とパスワードが発行されます。",
-                        "Fill in the required fields on the individual exhibitor application form and submit your application.\nGroups that apply will later be issued a group number and password."
+                        "Fill in the required fields on the individual exhibitor application form and submit your application.\nGroups that apply will later be issued a management number and password."
                       ),
-                      [t("管理番号", "group number"), t("パスワード", "password")]
+                      [t("管理番号", "management number"), t("パスワード", "password")]
                     )}
                   </p>
                   <p className={styles.stepNote}>
                     {t(
-                      "※出展申込みフォームは、ぴよナビ上で公開されません。管理番号とパスワードで、マイページへログインできます。",
-                      "* The exhibitor application form is not published on PiyoNavi. You can log in to My Page with your group number and password."
+                      "※管理番号とパスワードで、マイページへログインできます。",
+                      "* You can log in to My Page with your management number and password."
                     )}
                   </p>
+                  <Link href="https://forms.gle/YfhZK6S83B1s92aA6" className={styles.stepCta}>
+                    {t("個人出展申込みフォーム", "Individual Exhibitor Application Form")}
+                    <StepCtaArrow />
+                  </Link>
                 </div>
               </div>
             </li>

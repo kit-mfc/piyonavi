@@ -101,7 +101,7 @@ export default function HomePage() {
               </span>
             ))}
           </p>
-          <Link href="/login" className="btn btn--green">{t("団体ログイン", "Exhibitor Login")}</Link>
+          <Link href="/login" className="btn btn--green">{t("出展者ログイン", "Exhibitor Login")}</Link>
           <div className={styles.scrollIndicator} aria-hidden="true">
             <span className={styles.scrollIndicatorText}>{t("SCROLL", "SCROLL")}</span>
             <span className={styles.scrollIndicatorDot} />
