@@ -9,7 +9,7 @@ export default function MyPageHome() {
   return (
     <>
       <h1 className={styles.greeting}>{t("こんにちは、出展団体Aさん", "Hello, Exhibitor Group A")}</h1>
-      <p className={styles.groupId}>{t("団体番号　0000", "Group No.　0000")}</p>
+      <p className={styles.groupId}>{t("管理番号　0000", "Management No.　0000")}</p>
 
       <div className={styles.grid}>
         <div className={styles.card}>

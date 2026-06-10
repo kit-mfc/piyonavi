@@ -41,13 +41,13 @@ export default function LoginPage() {
           className={styles.form}
           onSubmit={(e) => {
             e.preventDefault();
-            setError(t("団体番号またはパスワードが異なります", "Group number or password is incorrect"));
+            setError(t("管理番号またはパスワードが異なります", "Management number or password is incorrect"));
           }}
         >
           <label className={styles.field}>
             <input
               type="text"
-              placeholder={t("団体番号", "Group number")}
+              placeholder={t("管理番号", "Management number")}
               className={styles.input}
             />
           </label>
