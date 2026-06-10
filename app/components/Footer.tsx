@@ -59,7 +59,7 @@ export default function Footer() {
           <h3>{t("委員会関連", "Committee")}</h3>
           <ul>
             <li><Link href="/links">{t("関連リンク", "Related Links")}</Link></li>
-            <li><Link href="/login">{t("団体ログイン", "Exhibitor Login")}</Link></li>
+            <li><Link href="/login">{t("出展者ログイン", "Exhibitor Login")}</Link></li>
           </ul>
         </div>
       </div>
