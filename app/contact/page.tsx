@@ -101,6 +101,8 @@ export default function ContactPage() {
                 <option value="individual">{t("個人出展", "Individual exhibit")}</option>
                 <option value="research">{t("研究紹介", "Research presentation")}</option>
                 <option value="accounting">{t("会計", "Accounting")}</option>
+                <option value="pr">{t("広報", "Public relations")}</option>
+                <option value="matsupiyo">{t("まつぴよ", "Matsupiyo")}</option>
                 <option value="other">{t("その他", "Other")}</option>
               </select>
             </label>

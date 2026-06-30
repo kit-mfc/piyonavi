@@ -68,6 +68,24 @@ export default function RulesPage() {
               </span>
             </a>
           </div>
+          <div className={styles.buttonWrap}>
+            <a
+              href="/第56回松ヶ崎祭手づくりテントマニュアル.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.soloCta} ${styles.wide}`}
+            >
+              <span className={styles.soloCtaLabel}>
+                {t("手づくりテントマニュアルを確認する", "View the handmade tent manual")}
+              </span>
+              <span className={styles.soloCtaArrow} aria-hidden="true">
+                <svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="18" fill="#FFFFFF" fillOpacity="0.5" stroke="currentColor" strokeWidth="2.5" />
+                  <path d="M17 12.5L25 20L17 27.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
       </main>
       <Footer />

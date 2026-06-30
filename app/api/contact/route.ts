@@ -21,6 +21,8 @@ const CATEGORY_LABELS: Record<string, string> = {
   individual: "個人出展",
   research: "研究紹介",
   accounting: "会計",
+  pr: "広報",
+  matsupiyo: "まつぴよ",
   other: "その他",
 };
 
