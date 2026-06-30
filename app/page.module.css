@@ -259,6 +259,18 @@
   font-weight: 500;
 }
 
+.topicCardImage {
+  position: absolute;
+  left: 28px;
+  bottom: 22px;
+  display: block;
+}
+
+.topicCardImage img {
+  width: 120px;
+  height: auto;
+}
+
 .topicCardArrow {
   position: absolute;
   right: 20px;
@@ -330,6 +342,12 @@
   .topicCard {
     aspect-ratio: auto;
     padding-bottom: 84px;
+  }
+  .topicCardWithImage {
+    padding-bottom: 130px;
+  }
+  .topicCardImage img {
+    width: 104px;
   }
   .heroLoginCard {
     display: none;

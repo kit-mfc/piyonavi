@@ -14,7 +14,7 @@ export default function HomePage() {
     "松ヶ崎祭出展者向けの情報提供・提出物管理ポータルサイトです。\n出展に必要な情報の確認・各種出展物の管理を行えます。",
     "An information and submission portal for exhibitors.\nCheck the information you need and manage your exhibitor materials."
   ).split("\n");
-  const topics = [
+  const topics: { title: string; href: string; text?: string; image?: string }[] = [
     {
       title: t("松ヶ崎祭とは", "About Matsugasaki Festival"),
       text: t(
@@ -54,6 +54,11 @@ export default function HomePage() {
         "Information about the m-1 Grand Prix."
       ),
       href: "/m-1",
+    },
+    {
+      title: t("まつぴよについて", "About Matsupiyo"),
+      image: "/imgs/matsupiyo-kiri.svg",
+      href: "/matsupiyo",
     },
   ];
   const news = newsItems.slice(0, 3);
@@ -123,12 +128,22 @@ export default function HomePage() {
               const hasSuffix = topic.title.endsWith(suffix);
               const main = hasSuffix ? topic.title.slice(0, -suffix.length) : topic.title;
               return (
-                <Link key={topic.href} href={topic.href} className={styles.topicCard}>
+                <Link
+                  key={topic.href}
+                  href={topic.href}
+                  className={`${styles.topicCard}${topic.image ? ` ${styles.topicCardWithImage}` : ""}`}
+                >
                   <h3>
                     {main}
                     {hasSuffix && <span className={styles.topicCardTitleSuffix}>{suffix}</span>}
                   </h3>
-                  <p>{topic.text}</p>
+                  {topic.image ? (
+                    <span className={styles.topicCardImage} aria-hidden="true">
+                      <Image src={topic.image} alt="" width={95} height={83} />
+                    </span>
+                  ) : (
+                    <p>{topic.text}</p>
+                  )}
                   <span className={styles.topicCardArrow} aria-hidden="true">
                     <svg viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="32.5" cy="32.5" r="32" fill="white" stroke="#828282"/>
