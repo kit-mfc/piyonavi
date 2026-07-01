@@ -70,13 +70,13 @@ export default function RulesPage() {
           </div>
           <div className={styles.buttonWrap}>
             <a
-              href="/第56回松ヶ崎祭手づくりテントマニュアル.pdf"
+              href="/第56回松ヶ崎祭手づくりテント規約.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className={`${styles.soloCta} ${styles.wide}`}
             >
               <span className={styles.soloCtaLabel}>
-                {t("手づくりテントマニュアルを確認する", "View the handmade tent manual")}
+                {t("手づくりテント規約を確認する", "View the handmade tent rules")}
               </span>
               <span className={styles.soloCtaArrow} aria-hidden="true">
                 <svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
