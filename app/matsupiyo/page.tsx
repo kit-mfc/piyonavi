@@ -117,7 +117,7 @@ export default function MatsupiyoPage() {
             </h2>
 
             <a
-              href="/matupiyo-guideline.pdf"
+              href="/まつぴよガイドライン.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.guidelineBtn}
