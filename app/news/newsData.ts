@@ -10,6 +10,20 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    id: "20260713001",
+    date: "2026-07-13",
+    title: {
+      ja: "参加保証金納入のお知らせ",
+      en: "Notice: Payment of Participation Deposit",
+    },
+    body: [
+      {
+        ja: "本日から7/17(金)まで、参加保証金の納入期間となります。出展団体の皆さまは、期日までに必ず納入をお願いいたします。",
+        en: "The payment period for the participation deposit will be from today until Friday, July 17. All exhibitor groups are requested to make the payment by the deadline.",
+      },
+    ],
+  },
+  {
     id: "20260603002",
     date: "2026-06-03",
     title: {
