@@ -18,7 +18,7 @@ export const newsItems: NewsItem[] = [
     },
     body: [
       {
-        ja: "本日から7/17(金)まで、参加保証金の納入期間となります。昼休みに学友会室にお越しください。出展団体の皆さまは、期日までに必ず納入をお願いいたします。",
+        ja: "本日から7/17(金)まで、参加保証金の納入期間となります。昼休みまたは5限後に学友会室にお越しください。出展団体の皆さまは、期日までに必ず納入をお願いいたします。",
         en: "The payment period for the participation deposit will be from today until Friday, July 17. Please drop by the student council room during the lunch break. All exhibitor groups are requested to make the payment by the deadline.",
       },
     ],
